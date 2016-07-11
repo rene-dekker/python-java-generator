@@ -26,7 +26,7 @@ class Property:
         '''
         ret = ""
         for i in self.annotations:
-            ret += "@JsonProperty(\"" + i + "\") \n"
+            ret += "@JsonProperty(\"" + i + "\")\n"
         return ret
     
     def __str__(self):
