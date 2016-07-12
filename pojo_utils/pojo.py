@@ -81,7 +81,7 @@ class Pojo:
         self.setProperties()
         for i,s in enumerate(self.properties):
             p = Property(name = s)
-            if len(self.json_properties) >= i:
+            if len(self.json_properties) > i:
                 p.annotations = [self.json_properties[i]]
             if len(self.types) == len(self.properties):
                 p.type = self.types[i]
