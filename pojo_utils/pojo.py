@@ -17,9 +17,6 @@ class Property:
         self.type = type
         self.annotations = annotations
     
-    def docstr(self, s):
-        return "/**\n * " + "The " + self.name + ".\n */\n"
-    
     def annotation(self):
         '''
         Rushed implementation of annotation.
@@ -32,7 +29,6 @@ class Property:
     
     def __str__(self):
         ret = ""
-        ret += self.docstr(self.name)
         ret += self.annotation()
         ret += "private " + self.type + " " + self.name + ";"
         return ret
