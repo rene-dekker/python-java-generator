@@ -5,6 +5,7 @@ Created on May 27, 2016
 '''
 
 import re
+import sys
 
 class Property:
     '''
@@ -104,4 +105,15 @@ class Pojo:
             for p in self.json_properties:
                 component = p.split('_')
                 self.properties.append(component[0].lower() + "".join(x.lower().title() for x in component[1:]))
-                
+
+if __name__ == "__main__" :
+    print 'prints pojo to stdout'
+    filename = sys.argv[1]
+    typesFile = sys.argv[2]
+    with open(filename, 'rb') as f:
+        l = f.read().split('\n')
+    with open(typesFile, 'rb') as ftypes :
+        ltypes = ftypes.read().split('\n')
+    pj = Pojo(properties = l, types = ltypes)
+    print pj
+
